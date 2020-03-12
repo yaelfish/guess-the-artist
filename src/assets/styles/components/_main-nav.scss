@@ -1,0 +1,22 @@
+.main-nav {
+  text-align: center;
+
+  ul {
+    display: flex;    
+    justify-content: center;
+  }
+
+  li {
+    margin-left: 9px;
+    padding: 5px 29px;
+    background-color: $clr4;
+    cursor: pointer;
+    &:hover {
+      background-color: $clr2;
+    }
+    a {
+    color: $clr6;
+    text-decoration: none;
+    }
+  }
+}

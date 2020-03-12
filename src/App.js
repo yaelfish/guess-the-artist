@@ -1,26 +1,29 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Router, Switch, Route } from 'react-router-dom';
+import { createBrowserHistory } from 'history';
+import MusicApp from './pages/MusicApp';
 
-function App() {
+import Home from './pages/Home';
+import Footer from './cmps/Footer';
+import NavBar from './cmps/NavBar';
+
+import './assets/styles/global.scss';
+
+const history = createBrowserHistory();
+
+export default function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+      <Router history={history} >
+        {/* <NavBar /> */}
+        <Switch>
+          <Route component={Home} path="/" exact />
+          <Route component={MusicApp} path="/music" />
+        </Switch>
+      </Router>
+      {/* <Footer /> */}
     </div>
   );
 }
 
-export default App;
